@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Raurkela Got Latent – A Stage for Every Talent</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,800;1,6..96,500&family=Outfit:wght@300;400;600&display=swap">
+<style>
+:root{color-scheme:dark;--ink:#050505;--coal:#120f08;--gold:#d4a73a;--gold-hi:#f6dc8a;--gold-lo:#8a6a1c;--cream:#f3e9cf;--mute:#b9ab8a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--ink);color:var(--cream);font:400 1.05rem/1.65 Outfit,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Bodoni Moda",Georgia,serif;margin:0;line-height:1.05}
+.gold{background:linear-gradient(180deg,var(--gold-hi),var(--gold) 55%,var(--gold-lo));-webkit-background-clip:text;background-clip:text;color:transparent}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold-hi);outline-offset:3px}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;padding:4rem 1.25rem 3rem;overflow:hidden;
+background:radial-gradient(ellipse 60% 45% at 50% 0%,rgba(246,220,138,.28),transparent 70%),radial-gradient(ellipse 80% 60% at 50% 100%,#2a1f08,var(--ink) 70%)}
+.beam{position:absolute;top:-5%;width:34vmax;height:120%;background:linear-gradient(180deg,rgba(246,220,138,.34),transparent 75%);clip-path:polygon(45% 0,55% 0,100% 100%,0 100%);transform-origin:50% 0;filter:blur(6px);pointer-events:none}
+.beam.l{left:-6%;transform:rotate(-22deg)}.beam.r{right:-6%;transform:rotate(22deg)}
+.beam.c{left:50%;margin-left:-17vmax;opacity:.55}
+.confetti{position:absolute;inset:0;pointer-events:none}
+.confetti i{position:absolute;top:-12px;width:7px;height:12px;background:var(--gold);opacity:.8;animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+.hero-in{position:relative;z-index:2;max-width:56rem}
+.presents{font-size:.95rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-hi);margin:0 0 1.2rem}
+.mic{width:min(9rem,34vw);height:auto;margin:0 auto 1rem;display:block;filter:drop-shadow(0 0 22px rgba(246,220,138,.55))}
+h1{font-size:clamp(2.7rem,10.5vw,7.4rem);font-weight:800;text-transform:uppercase;letter-spacing:.01em}
+h1 span{display:block}
+h1 .got{font-style:italic;font-weight:500;font-size:.55em;letter-spacing:.2em;margin:.15em 0}
+.tag{font-family:"Bodoni Moda",serif;font-style:italic;font-size:clamp(1.2rem,3.4vw,1.9rem);color:var(--gold-hi);margin:1.4rem 0 1.8rem}
+.soon{display:inline-block;padding:.55rem 1.6rem;border:1px solid var(--gold);letter-spacing:.34em;text-transform:uppercase;font-weight:600;font-size:.9rem;color:var(--gold-hi);background:rgba(212,167,58,.08);animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 28px rgba(246,220,138,.45)}}
+.sil{position:absolute;left:0;right:0;bottom:0;height:clamp(110px,22vw,220px);z-index:1;opacity:.95}
+.sil svg{width:100%;height:100%;display:block}
+
+/* SECTIONS */
+section{padding:5.5rem 1.25rem}
+.wrap{max-width:62rem;margin:0 auto}
+h2{font-size:clamp(2rem,6vw,3.6rem);font-weight:800;margin-bottom:1rem}
+.lead{max-width:40rem;color:var(--mute);font-size:1.15rem}
+.acts{display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:0;margin-top:2.6rem;border-top:1px solid var(--gold-lo);border-bottom:1px solid var(--gold-lo)}
+.act{padding:1.7rem 1rem;text-align:center;border-right:1px solid rgba(138,106,28,.5)}
+.act:last-child{border-right:0}
+.act svg{width:2.4rem;height:2.4rem;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;margin-bottom:.5rem}
+.act h3{font-size:1.5rem;font-weight:500}
+.act p{margin:.2rem 0 0;color:var(--mute);font-size:.95rem;line-height:1.4}
+.about{background:linear-gradient(180deg,var(--ink),var(--coal))}
+.about .cols{display:grid;gap:2.5rem;grid-template-columns:1.1fr 1fr;align-items:center}
+.about p{margin:0 0 1rem;max-width:36rem}
+.pull{font-family:"Bodoni Moda",serif;font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.2;border-left:3px solid var(--gold);padding-left:1.4rem}
+
+/* REGISTER */
+.reg{position:relative;text-align:center;background:radial-gradient(ellipse 70% 80% at 50% 0%,rgba(246,220,138,.2),transparent 70%),var(--coal);border-top:1px solid var(--gold-lo)}
+.reg h2{font-size:clamp(2.2rem,7vw,4.4rem);text-transform:uppercase}
+.num{display:inline-block;margin:1.6rem 0 .8rem;font-family:"Bodoni Moda",serif;font-weight:800;font-size:clamp(2.2rem,8vw,4rem);letter-spacing:.05em;text-decoration:none;padding:.4rem 1.6rem;border:2px solid var(--gold);color:var(--ink);background:linear-gradient(180deg,var(--gold-hi),var(--gold) 60%,var(--gold-lo));transition:transform .2s,box-shadow .2s}
+.num:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(246,220,138,.35)}
+.reg small{display:block;color:var(--mute)}
+
+/* PARTNER + FOOT */
+.partner{text-align:center;padding:3.5rem 1.25rem;border-top:1px solid var(--gold-lo)}
+.partner p{margin:0;color:var(--mute);letter-spacing:.2em;text-transform:uppercase;font-size:.8rem}
+.partner h3{font-size:clamp(1.6rem,5vw,2.6rem);font-weight:500;margin-top:.5rem}
+footer{padding:2.2rem 1.25rem calc(2.2rem + env(safe-area-inset-bottom,0px));text-align:center;color:var(--mute);font-size:.9rem;border-top:1px solid rgba(138,106,28,.4)}
+footer b{color:var(--gold-hi);font-weight:600}
+@media(max-width:720px){.about .cols{grid-template-columns:1fr}.act{border-right:0;border-bottom:1px solid rgba(138,106,28,.5)}.act:last-child{border-bottom:0}section{padding:4rem 1.25rem}}
+@media(prefers-reduced-motion:reduce){.confetti i,.soon{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="beam l"></div><div class="beam c"></div><div class="beam r"></div>
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
+  <div class="hero-in">
+    <p class="presents">Aavishkar Entertainment presents</p>
+    <svg class="mic" viewBox="0 0 100 160" role="img" aria-label="Golden microphone">
+      <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6dc8a"/><stop offset=".6" stop-color="#d4a73a"/><stop offset="1" stop-color="#8a6a1c"/></linearGradient></defs>
+      <rect x="30" y="6" width="40" height="70" rx="20" fill="url(#g)"/>
+      <path d="M30 28h40M30 42h40M30 56h40" stroke="#120f08" stroke-width="2.5" opacity=".55"/>
+      <path d="M16 62v6a34 34 0 0 0 68 0v-6" fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round"/>
+      <path d="M50 102v36M32 148h36" stroke="url(#g)" stroke-width="6" stroke-linecap="round"/>
+    </svg>
+    <h1><span class="gold">Raurkela</span><span class="got gold">Got</span><span class="gold">Latent</span></h1>
+    <p class="tag">A stage for every talent</p>
+    <span class="soon">Coming soon</span>
+  </div>
+  <div class="sil" aria-hidden="true">
+    <svg viewBox="0 0 1200 220" preserveAspectRatio="xMidYMax slice" fill="#000">
+      <path d="M0 220V200h1200v20z"/>
+      <!-- singer -->
+      <g><circle cx="130" cy="92" r="16"/><path d="M104 220l8-92c2-14 12-20 18-20s16 6 18 20l8 92z"/><path d="M146 112l30-36" stroke="#000" stroke-width="9" stroke-linecap="round"/></g>
+      <!-- dancer -->
+      <g><circle cx="300" cy="66" r="15"/><path d="M286 82c10-6 20-6 28 0l26-34 8 6-26 44 22 70h-16l-18-48-14 48h-18l14-62z"/></g>
+      <!-- guitarist -->
+      <g><circle cx="470" cy="90" r="16"/><path d="M446 220l6-92c2-14 12-20 18-20s16 6 18 20l6 92z"/><path d="M430 170l90-36" stroke="#000" stroke-width="10" stroke-linecap="round"/><ellipse cx="438" cy="168" rx="20" ry="14" transform="rotate(-22 438 168)"/></g>
+      <!-- poet with paper -->
+      <g><circle cx="640" cy="88" r="16"/><path d="M616 220l8-94c2-14 10-20 16-20s14 6 16 20l8 94z"/><rect x="660" y="116" width="26" height="34" rx="2" transform="rotate(-10 660 116)"/></g>
+      <!-- rapper, arm raised -->
+      <g><circle cx="810" cy="84" r="16"/><path d="M786 220l8-96c2-14 10-20 16-20s14 6 16 20l8 96z"/><path d="M836 118l28-52" stroke="#000" stroke-width="9" stroke-linecap="round"/></g>
+      <!-- drummer -->
+      <g><circle cx="980" cy="104" r="16"/><path d="M958 220l6-82c2-12 10-18 16-18s14 6 16 18l6 82z"/><ellipse cx="1030" cy="170" rx="34" ry="10"/><path d="M996 134l-26-24M1000 134l36-20" stroke="#000" stroke-width="6" stroke-linecap="round"/></g>
+      <!-- dancer 2 -->
+      <g><circle cx="1130" cy="72" r="15"/><path d="M1116 88c10-6 20-6 28 0l-4 60 24 72h-18l-16-52-12 52h-18l14-72z"/></g>
+    </svg>
+  </div>
+</header>
+
+<section class="about">
+  <div class="wrap cols">
+    <div>
+      <h2 class="gold">Your city. Your talent. The spotlight.</h2>
+      <p>Raurkela Got Latent is a talent show built to put local performers on a real stage, with professional production and a live audience.</p>
+      <p>Whether you have performed for years or never stepped in front of a crowd, this stage is open to you.</p>
+    </div>
+    <div class="pull gold">Live performances. Local talent. Emerging artists.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Who can take the stage</h2>
+    <p class="lead">If you have a talent worth watching, there is a place for it here.</p>
+    <div class="acts">
+      <div class="act"><svg viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/></svg><h3>Singers</h3><p>Solo or group</p></div>
+      <div class="act"><svg viewBox="0 0 24 24"><circle cx="12" cy="4" r="2"/><path d="M12 6v7l-4 8M12 13l5 8M6 9l6-2 6 2"/></svg><h3>Dancers</h3><p>Any style</p></div>
+      <div class="act"><svg viewBox="0 0 24 24"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg><h3>Musicians</h3><p>Any instrument</p></div>
+      <div class="act"><svg viewBox="0 0 24 24"><path d="M4 20l1-4L17 4l3 3L8 19zM14 7l3 3"/></svg><h3>Poets</h3><p>Spoken or written</p></div>
+      <div class="act"><svg viewBox="0 0 24 24"><path d="M3 12h3l2-6 4 12 3-9 2 3h4"/></svg><h3>Rappers</h3><p>Bars and freestyle</p></div>
+      <div class="act"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg><h3>And more</h3><p>Surprise us</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="reg" id="register">
+  <div class="wrap">
+    <h2 class="gold">Want to showcase your talent?</h2>
+    <p class="lead" style="margin:0 auto">Call to register and get the details.</p>
+    <a class="num" href="tel:+918249611911">8249611911</a>
+    <small>Registration and details</small>
+  </div>
+</section>
+
+<div class="partner">
+  <p>Powered by</p>
+  <h3 class="gold">Affectionary Restaurant and Cafe</h3>
+</div>
+
+<footer>
+  <b>Management and event organized by Aavishkar Entertainment</b><br>
+  Instagram: Aavishkar Entertainment
+</footer>
+
+<script>
+(function(){var c=document.getElementById('confetti');if(!c)return;
+var n=window.matchMedia('(max-width:720px)').matches?22:44,cols=['#f6dc8a','#d4a73a','#8a6a1c','#fff3c4'];
+for(var i=0;i<n;i++){var e=document.createElement('i');
+e.style.left=Math.random()*100+'%';e.style.background=cols[i%4];
+e.style.animationDuration=(6+Math.random()*8)+'s';e.style.animationDelay=(-Math.random()*12)+'s';
+e.style.width=(4+Math.random()*6)+'px';e.style.height=(8+Math.random()*8)+'px';c.appendChild(e);}})();
+</script>
+</body>
+</html>
